@@ -1,33 +1,39 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <stdlib.h>
 
 using namespace std;
 
 class Matrix
 {
 private:
-	int **matrix;
 	int Columns;
 	int Strings;
-
+	int **matrix;
 public:
 	Matrix();
-	
-	Matrix(int a, int b);
-	
-	Matrix(const Matrix&Matrix);
+
+	Matrix(int _Columns, int _Strings);
+
+	Matrix(const Matrix& result);
+
 	~Matrix();
-	
-	int Col() const;
-	int Str() const;
-	int set(int x, int y, int z) const;
-	int get(int x, int y) const;
-	void print(void) const;
-	void input(char *path) const;
-	Matrix& operator =(const Matrix &Matrix);
-	Matrix& operator +(Matrix a);
-	Matrix operator *(Matrix a);
-	
+
+	int Columns_();
+
+	int Strings_();
+
+	void scan(string filename);
+
+	bool operator == (const Matrix& m2) const;
+
+	Matrix operator + (const Matrix& m2) const;
+
+	Matrix operator * (const Matrix& m2) const;
+
+	Matrix& operator = (const Matrix& result);
+
+	friend ostream& operator << (ostream& outfile, const Matrix& result);
+
+	friend istream& operator >> (istream& infile, const Matrix& result);
 };
