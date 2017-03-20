@@ -16,21 +16,21 @@ SCENARIO("copy constructor") {
 
 
 SCENARIO("operator +") {
-	Matrix m1 (3, 3);
-	Matrix m2 (3, 3);
-	Matrix m3 (3, 3);	
-	std::ifstream("m1.txt") >> m1;
-	std::ifstream("m2.txt") >> m2;
-	std::ifstream("m1+m2.txt") >> m3;
+	Matrix matrix1 (3, 3);
+	Matrix matrix2 (3, 3);
+	Matrix matrix3 (3, 3);	
+	std::ifstream("matrix1.txt") >> m1;
+	std::ifstream("matrix2.txt") >> m2;
+	std::ifstream("summatrix.txt") >> m3;
 }
 
 SCENARIO("operator *") {
-	Matrix m1 (3, 3);
-	Matrix m2 (3, 3);
-	Matrix m3 (3, 3);	
-	std::ifstream("m1.txt") >> m1;
-	std::ifstream("m2.txt") >> m2;
-	std::ifstream("m1 x m2.txt") >> m3;
+	Matrix matrix1 (3, 3);
+	Matrix matrix2 (3, 3);
+	Matrix matrix3 (3, 3);	
+	std::ifstream("matrix1.txt") >> m1;
+	std::ifstream("matrix2.txt") >> m2;
+	std::ifstream("multmatrix.txt") >> m3;
 }
 REQUIRE(matrix.Strings() == 0);
 REQUIRE(matrix.Columns() == 0);
