@@ -62,12 +62,12 @@ istream& operator >> (istream& infile, const Matrix& result)
 	return infile;
 }
 
-void Matrix::scan(string filename)
+void Matrix::search(string filename)
 {
 	ifstream infile;
 	infile.open(filename);
 	if (!infile.is_open())
-		cout << "Error! Please, try again!" << endl;
+		cout << "Error! Try again!" << endl;
 	else
 	{
 		matrix = new int*[Strings];
