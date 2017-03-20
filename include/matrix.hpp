@@ -23,7 +23,7 @@ public:
 
 	int Strings_();
 
-	void scan(string filename);
+	void search(string filename);
 
 	bool operator == (const Matrix& m2) const;
 
