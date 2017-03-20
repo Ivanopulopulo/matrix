@@ -3,8 +3,6 @@
 
 SCENARIO("default constructor") {
 	Matrix matrix;
-	REQUIRE(matrix.Strings() == 0);
-	REQUIRE(matrix.Columns() == 0);
 }
 
 SCENARIO("constructor with params") {
