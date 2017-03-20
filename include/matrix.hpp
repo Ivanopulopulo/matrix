@@ -20,7 +20,11 @@ public:
 	Matrix(const Matrix&Matrix);
 	~Matrix();
 	
-	void print(void) const
+	int Col() const;
+	int Str() const;
+	int set(int x, int y, int z) const;
+	int get(int x, int y) const;
+	void print(void) const;
 	void input(char *path) const;
 	Matrix& operator =(const Matrix &Matrix);
 	Matrix& operator +(Matrix a);
