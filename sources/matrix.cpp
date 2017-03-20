@@ -1,24 +1,24 @@
 #include "matrix.hpp"
 
-int Col() const
+int Matrix :: Col() const
 	{
 		return Columns;
 	}
 
-	int Str() const
+	int Matrix :: Str() const
 	{
 		return Strings;
 	}
-	int set(int x, int y, int z) const
+	int Matrix :: set(int x, int y, int z) const
 	{
 		return matrix[x][y] = z;
 	}
 
-	int get(int x, int y) const
+	int Matrix :: get(int x, int y) const
 	{
 		return matrix[x][y];
 	}
-	void print(void) const
+	void Matrix :: print(void) const
 	{
 		for (int i = 0; i < Columns; i++){
 			for (int j = 0; j < Strings; j++){
@@ -28,7 +28,7 @@ int Col() const
 		}
 	}
 
-	void input(char *path) const
+	void Matrix :: input(char *path) const
 	{
 		ifstream file;
 		file.open(path);
@@ -47,7 +47,7 @@ int Col() const
 
 	
 
-	Matrix& operator =(const Matrix &Matrix)
+	Matrix :: Matrix& operator =(const Matrix &Matrix)
 	{
 		if (this!= &Matrix)
 		{
@@ -67,7 +67,7 @@ int Col() const
 		return *this;
 	}
 
-	Matrix& operator +(Matrix a)
+	Matrix :: Matrix& operator +(Matrix a)
 	{
 		for (int i = 0; i < Columns; i++)
 		{
@@ -78,7 +78,7 @@ int Col() const
 		}
 		return a;
 	}
-	Matrix operator *(Matrix a)
+	Matrix :: Matrix operator *(Matrix a)
 	{
 		for (int i = 0; i < Columns; i++)
 		{
@@ -89,7 +89,7 @@ int Col() const
 		}
 		return a;
 	}
-	Matrix:: ~Matrix()
+	Matrix :: Matrix:: ~Matrix()
 	{
 		for (int i = 0; i<Strings; i++)
 			delete[]matrix[i];
