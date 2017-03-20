@@ -1,14 +1,14 @@
 #include <matrix.hpp>
 #include <catch.hpp>
 
-SCENARIO("default constructor")
+SCENARIO("def constructor")
 {
 	Matrix matrix;
 	REQUIRE(matrix.Strings_() == 0);
 	REQUIRE(matrix.Columns_() == 0);
 }
 
-SCENARIO("constructor with params") 
+SCENARIO("param constructor") 
 {
 	Matrix matrix(3, 3);
 	REQUIRE(matrix.Strings_() == 3);
