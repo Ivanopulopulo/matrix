@@ -47,7 +47,7 @@
 
 	
 
-	Matrix :: Matrix& operator =(const Matrix &Matrix)
+	Matrix Matrix& :: operator =(const Matrix &Matrix)
 	{
 		if (this!= &Matrix)
 		{
@@ -67,7 +67,7 @@
 		return *this;
 	}
 
-	Matrix :: Matrix& operator +(Matrix a)
+	Matrix Matrix& :: operator +(Matrix a)
 	{
 		for (int i = 0; i < Columns; i++)
 		{
@@ -78,7 +78,7 @@
 		}
 		return a;
 	}
-	Matrix :: Matrix operator *(Matrix a)
+	Matrix Matrix :: operator *(Matrix a)
 	{
 		for (int i = 0; i < Columns; i++)
 		{
