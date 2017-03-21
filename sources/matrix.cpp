@@ -108,6 +108,7 @@ Matrix Matrix::operator + (const Matrix& m2) const
 {
 	if ((Columns != m2.Columns) || (Strings != m2.Strings)) {
 		cout << "Error!";
+		return 1;
 	}
 	else {
 		Matrix result(Columns, Strings);
@@ -124,6 +125,7 @@ Matrix Matrix::operator * (const Matrix& m2) const
 {
 	if (m2.Strings != Columns){
 		cout << "Error!";
+		return 1;
 	}
 	else {
 		Matrix result(Strings, m2.Columns);
@@ -145,7 +147,6 @@ Matrix& Matrix::operator = (const Matrix& result)
 			delete[] matrix[i];
 		}
 		delete[] matrix;
-	}
 	Strings = result.Strings;
 	Columns = result.Columns;
 	matrix = new int*[Strings];
@@ -156,4 +157,7 @@ Matrix& Matrix::operator = (const Matrix& result)
 		}
 	}
 	return *this;
+		
+	
+	
 }
