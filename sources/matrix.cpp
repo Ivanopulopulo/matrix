@@ -54,7 +54,7 @@ Matrix::~Matrix()
 	delete[]matrix;
 }
 
-istream& operator >> (istream& infile, const Matrix& result) const
+istream& operator >> (istream& infile, const Matrix& result)
 {
 	for (int i = 0; i < result.Strings; i++)
 	for (int j = 0; j < result.Columns; j++)
@@ -62,7 +62,7 @@ istream& operator >> (istream& infile, const Matrix& result) const
 	return infile;
 }
 
-void Matrix::search(string filename) const
+void Matrix::search(string filename) 
 {
 	ifstream infile;
 	infile.open(filename);
