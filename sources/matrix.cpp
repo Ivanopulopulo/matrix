@@ -147,17 +147,20 @@ Matrix& Matrix::operator = (const Matrix& result)
 			delete[] matrix[i];
 		}
 		delete[] matrix;
+	
+		}
 	Strings = result.Strings;
 	Columns = result.Columns;
 	matrix = new int*[Strings];
-	for (int i = 0; i < Strings; i++){
+	for (int i = 0; i < Strings; i++)
+	{
 		matrix[i] = new int[Columns];
-		for (int j = 0; j < Columns; j++){
+		for (int j = 0; j < Columns; j++)
+		{
 			matrix[i][j] = result.matrix[i][j];
 		}
 	}
 	return *this;
 		
-	
-	
+
 }
