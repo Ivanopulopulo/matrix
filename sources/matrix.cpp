@@ -1,11 +1,11 @@
 #include "matrix.hpp"
 
-int Matrix::Columns_()
+int Matrix::Columns_() const
 {
 	return Columns;
 }
 
-int Matrix::Strings_()
+int Matrix::Strings_() const
 {
 	return Strings;
 }
@@ -54,7 +54,7 @@ Matrix::~Matrix()
 	delete[]matrix;
 }
 
-istream& operator >> (istream& infile, const Matrix& result)
+istream& operator >> (istream& infile, const Matrix& result) const
 {
 	for (int i = 0; i < result.Strings; i++)
 	for (int j = 0; j < result.Columns; j++)
@@ -62,7 +62,7 @@ istream& operator >> (istream& infile, const Matrix& result)
 	return infile;
 }
 
-void Matrix::search(string filename)
+void Matrix::search(string filename) const
 {
 	ifstream infile;
 	infile.open(filename);
