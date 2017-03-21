@@ -54,7 +54,7 @@ Matrix::~Matrix()
 	delete[]matrix;
 }
 
-istream& operator >> (istream& infile, const Matrix& result)
+istream& operator >> (istream& infile, Matrix& result)
 {
 	for (int i = 0; i < result.Strings; i++)
 	for (int j = 0; j < result.Columns; j++)
@@ -81,7 +81,7 @@ void Matrix::search(string filename)
 	infile.close();
 }
 
-ostream& operator << (ostream& outfile, const Matrix& result)
+ostream& operator << (ostream& outfile, Matrix& result)
 {
 	for (int i = 0; i < result.Strings; i++){
 		for (int j = 0; j < result.Columns; j++){
@@ -97,11 +97,11 @@ bool Matrix::operator == (const Matrix& m2) const
 	bool k = false;
 	for (int i = 0; i < Strings; i++){
 		for (int j = 0; j < Columns; j++){
-			if (matrix[i][j] == m2.matrix[i][j])
-				k = true;
+			if (matrix[i][j] != m2.matrix[i][j])
+				k = false;
 		}
 	}
-	return k;
+	return true;
 }
 
 Matrix Matrix::operator + (const Matrix& m2) const
