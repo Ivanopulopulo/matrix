@@ -97,8 +97,8 @@ bool Matrix::operator == (const Matrix& m2) const
 	bool k = false;
 	for (int i = 0; i < Strings; i++){
 		for (int j = 0; j < Columns; j++){
-			if (matrix[i][j] == m2.matrix[i][j])
-				k = true;
+			if (matrix[i][j] != m2.matrix[i][j])
+				k = false;
 		}
 	}
 	return k;
